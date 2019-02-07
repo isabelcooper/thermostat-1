@@ -6,56 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="interface.js"></script>
     <script src="src/weatherapi.js"></script>
-    <style>
-       .column {
-        width: 20%;
-        align: right;
-        float: left;
-        padding: 10px;
-        margin: 10px;
-      }
-
-       #temperature {
-         font-size: 100px;
-         margin: 10px;
-       }
-        .high-usage {
-        color: red;
-      }
-
-        .medium-usage {
-          color: black;
-        }
-
-        .low-usage {
-          color: green;
-        }
-
-        #powersaving-on.true {
-          background-color: green;
-          color: white;
-        }
-
-        #powersaving-off.false {
-          background-color: red;
-          color: white;
-        }
-
-        .btn-group .button {
-          font-size: 20px;
-          padding: 10px, 20px;
-          cursor: pointer;
-          display: inline-block;
-          display: block;
-          width: 100px;
-          margin: 10px;
-        }
-
-        .button:hover {
-          background-color: grey;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
   </head>
   <body>
     <h1 style="text-align: center">Family Thermostat</h1>
@@ -65,20 +16,19 @@
         <h3>Current temperature: </h3>
         <p id="temperature">20</p>
       </div>
-      <div class='column'>
+      <div class='column-thin'>
         <div class='btn-group'>
           <br>
           <br>
           <button class="button" id ="up" type="button" name="up"> + </button>
           <button class="button" id="down" type="button" name="down"> - </button>
           <button class="button" id="reset" type="button" name="reset">Reset</button>
-          <br>
         </div>
       </div>
       <div class='column'>
         <h3>Energy Efficiency:</h3>
         <p id="energy-usage" >Medium</p>
-        Power saving mode:
+        Power saving mode: <br>
         <button class="button" id="powersaving-on">ON</button>
         <button class="button" id="powersaving-off">OFF</button>
         <br>
@@ -87,7 +37,7 @@
         <h3>Check international weather:</h4>
         <form id="city-submit">
         <input type="text" method="post" id ="new-city">
-        <input type="submit" value="submit"></input>
+        <input type="submit" value="Check weather"></input>
         <p style = "font-size: 20px" id= "current-temp"></p>
         <p style = "font-size: 20px" id= "current-weather"></p>
       </form>

@@ -30,13 +30,11 @@ $( document ).ready(function() {
 
   $( '#powersaving-on' ).click(function( event ) {
     thermostat.turnPowerSavingOn();
-    $('#power-saving-status').text('ON');
     refreshData();
   })
 
   $( '#powersaving-off' ).click(function( event ) {
     thermostat.turnPowerSavingOff();
-    $('#power-saving-status').text('OFF');
     refreshData();
   });
 
