@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   let thermostat = new Thermostat();
-test
+
   function refreshData() {
     $('#temperature').text(thermostat.temperature + '\xB0' + 'C');
     $('#energy-usage').text(thermostat.energyUsage());
@@ -40,9 +40,11 @@ test
     refreshData();
   });
 
-  $( '#city-submit').submit(function( event ) {
+  $( '#city-submit' ).submit(function( event ) {
     event.preventDefault();
     var city = $('#new-city').val();
-    displayWeather(city);
+    getWeatherURL(city, (data) => {
+      loadWeather(data.main.temp);
+    });
   })
 });
