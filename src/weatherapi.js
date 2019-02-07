@@ -1,5 +1,6 @@
-function loadWeather(outsideTemp) {
-  $('#current-temp').text(Math.round(outsideTemp-273.15))
+function loadWeather(outsideTemp, weather) {
+  $('#current-temp').text(Math.round(outsideTemp-273.15) + '\xB0' + 'C')
+  $('#current-weather').text(weather)
 }
 
 function getWeatherURL(city, callback) {

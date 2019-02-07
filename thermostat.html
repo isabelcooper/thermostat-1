@@ -47,7 +47,7 @@
           cursor: pointer;
           display: inline-block;
           display: block;
-          width: 150px;
+          width: 100px;
           margin: 10px;
         }
 
@@ -68,6 +68,7 @@
       <div class='column'>
         <div class='btn-group'>
           <br>
+          <br>
           <button class="button" id ="up" type="button" name="up"> + </button>
           <button class="button" id="down" type="button" name="down"> - </button>
           <button class="button" id="reset" type="button" name="reset">Reset</button>
@@ -75,7 +76,7 @@
         </div>
       </div>
       <div class='column'>
-        <h3>Energy Efficiency:</h4>
+        <h3>Energy Efficiency:</h3>
         <p id="energy-usage" >Medium</p>
         Power saving mode:
         <button class="button" id="powersaving-on">ON</button>
@@ -83,10 +84,12 @@
         <br>
       </div>
       <div id ="weather-container" class='column'>
+        <h3>Check international weather:</h4>
         <form id="city-submit">
         <input type="text" method="post" id ="new-city">
         <input type="submit" value="submit"></input>
-        <p id= "current-temp"></p>
+        <p style = "font-size: 20px" id= "current-temp"></p>
+        <p style = "font-size: 20px" id= "current-weather"></p>
       </form>
       </div>
     </div>

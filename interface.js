@@ -44,7 +44,7 @@ $( document ).ready(function() {
     event.preventDefault();
     var city = $('#new-city').val();
     getWeatherURL(city, (data) => {
-      loadWeather(data.main.temp);
+      loadWeather(data.main.temp, data.weather[0].main);
     });
   })
 });
