@@ -38,7 +38,7 @@ describe('Thermostat', function () {
       for (var i = 0; i < 6; i++) {
         thermostat.up()
       }
-      expect(thermostat.temperature).toEqual(25)
+      expect(thermostat.temperature).toEqual(thermostat.MAX_TEMP_PSM_ON)
     })
 
     it('when power saving is off, cannot go above 32 degrees', function () {
@@ -46,7 +46,16 @@ describe('Thermostat', function () {
       for (var i = 0; i < 13; i++) {
         thermostat.up()
       }
-      expect(thermostat.temperature).toEqual(32)
+      expect(thermostat.temperature).toEqual(thermostat.MAX_TEMP_PSM_OFF)
+    })
+
+    it ('reduce temp to limit if psm switched on', function() {
+      thermostat.turnPowerSavingOff()
+      for (var i = 0; i < 10; i++) {
+        thermostat.up()
+      }
+      thermostat.turnPowerSavingOn()
+      expect(thermostat.temperature).toEqual(thermostat.MAX_TEMP_PSM_ON)
     })
   })
 
