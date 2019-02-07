@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   let thermostat = new Thermostat();
-
+test
   function refreshData() {
     $('#temperature').text(thermostat.temperature + '\xB0' + 'C');
     $('#energy-usage').text(thermostat.energyUsage());
